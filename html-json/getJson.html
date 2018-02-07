@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Get JSON From File</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <style type="text/css">
+
+	</style>
+</head>
+<body >
+	<div id="result">
+
+	</div>
+	<script type="text/javascript">
+		$.getJSON('customer_json.json', { get_param: 'value' }, function(data) {
+		    $.each(data.customer, function(index, element) {
+		       $('#result').append($('<div>', {
+		           text: element.telephone_number+" ค่าใช้จ่าย "+element.price+" บาท"
+		       }));
+		    });
+		});
+	</script>
+</body>
+</html>
